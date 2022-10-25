@@ -10,6 +10,10 @@
 		94B8AE8029077B1A0090C903 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE7F29077B1A0090C903 /* game.swift */; };
 		94B8AE82290780DC0090C903 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE81290780DC0090C903 /* Player.swift */; };
 		94B8AE84290781140090C903 /* character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE83290781140090C903 /* character.swift */; };
+		94B8AE86290786FB0090C903 /* dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE85290786FA0090C903 /* dwarf.swift */; };
+		94B8AE8829079A980090C903 /* warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE8729079A980090C903 /* warrior.swift */; };
+		94B8AE8A29079AA90090C903 /* colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE8929079AA90090C903 /* colossus.swift */; };
+		94B8AE8C29079AB80090C903 /* magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE8B29079AB80090C903 /* magus.swift */; };
 		94FB2BF829067BCE006518C3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB2BF729067BCE006518C3 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		94B8AE7F29077B1A0090C903 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
 		94B8AE81290780DC0090C903 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../../../../../Applications/Player.swift; sourceTree = "<group>"; };
 		94B8AE83290781140090C903 /* character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = character.swift; path = ../../../character.swift; sourceTree = "<group>"; };
+		94B8AE85290786FA0090C903 /* dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dwarf.swift; sourceTree = "<group>"; };
+		94B8AE8729079A980090C903 /* warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = warrior.swift; sourceTree = "<group>"; };
+		94B8AE8929079AA90090C903 /* colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colossus.swift; sourceTree = "<group>"; };
+		94B8AE8B29079AB80090C903 /* magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = magus.swift; sourceTree = "<group>"; };
 		94FB2BF429067BCE006518C3 /* P3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = P3; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FB2BF729067BCE006518C3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +74,10 @@
 				94B8AE7F29077B1A0090C903 /* game.swift */,
 				94B8AE81290780DC0090C903 /* Player.swift */,
 				94B8AE83290781140090C903 /* character.swift */,
+				94B8AE8929079AA90090C903 /* colossus.swift */,
+				94B8AE85290786FA0090C903 /* dwarf.swift */,
+				94B8AE8B29079AB80090C903 /* magus.swift */,
+				94B8AE8729079A980090C903 /* warrior.swift */,
 				94FB2BF729067BCE006518C3 /* main.swift */,
 			);
 			path = P3;
@@ -131,6 +143,10 @@
 			files = (
 				94FB2BF829067BCE006518C3 /* main.swift in Sources */,
 				94B8AE82290780DC0090C903 /* Player.swift in Sources */,
+				94B8AE8829079A980090C903 /* warrior.swift in Sources */,
+				94B8AE8C29079AB80090C903 /* magus.swift in Sources */,
+				94B8AE86290786FB0090C903 /* dwarf.swift in Sources */,
+				94B8AE8A29079AA90090C903 /* colossus.swift in Sources */,
 				94B8AE8029077B1A0090C903 /* game.swift in Sources */,
 				94B8AE84290781140090C903 /* character.swift in Sources */,
 			);

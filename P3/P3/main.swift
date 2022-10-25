@@ -7,8 +7,5 @@
 
 import Foundation
 
-
-
-// Classe Character with their proprieties (type, life, weapon)
-
+let dwarf = Dwarf()
 
