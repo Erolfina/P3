@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94B8AE8029077B1A0090C903 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE7F29077B1A0090C903 /* game.swift */; };
+		94B8AE82290780DC0090C903 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE81290780DC0090C903 /* Player.swift */; };
+		94B8AE84290781140090C903 /* character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE83290781140090C903 /* character.swift */; };
 		94FB2BF829067BCE006518C3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB2BF729067BCE006518C3 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		94B8AE7F29077B1A0090C903 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
+		94B8AE81290780DC0090C903 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../../../../../../Applications/Player.swift; sourceTree = "<group>"; };
+		94B8AE83290781140090C903 /* character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = character.swift; path = ../../../character.swift; sourceTree = "<group>"; };
 		94FB2BF429067BCE006518C3 /* P3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = P3; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FB2BF729067BCE006518C3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +63,9 @@
 		94FB2BF629067BCE006518C3 /* P3 */ = {
 			isa = PBXGroup;
 			children = (
+				94B8AE7F29077B1A0090C903 /* game.swift */,
+				94B8AE81290780DC0090C903 /* Player.swift */,
+				94B8AE83290781140090C903 /* character.swift */,
 				94FB2BF729067BCE006518C3 /* main.swift */,
 			);
 			path = P3;
@@ -121,6 +130,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				94FB2BF829067BCE006518C3 /* main.swift in Sources */,
+				94B8AE82290780DC0090C903 /* Player.swift in Sources */,
+				94B8AE8029077B1A0090C903 /* game.swift in Sources */,
+				94B8AE84290781140090C903 /* character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
