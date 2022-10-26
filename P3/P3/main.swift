@@ -7,5 +7,8 @@
 
 import Foundation
 
-let dwarf = Dwarf()
+var colossus = Colossus()
+var magus = Magus()
+var dwarf = Dwarf()
+var warrior = Warrior()
 

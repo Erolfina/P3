@@ -8,20 +8,20 @@
 import Foundation
 
 class Dwarf: Character{
-    super.init(
-        type: [String] = ["dwarf",],
-        nameOfCharacter: String,
-        pointsOfLifeOfCharacter: Int = 50,
-        description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie",
-        weapon: String = "Axe",
-        weaponDamages: Int = 100,
-        healing: Bool = false) {
-            self.type = type
-            self.nameOfCharacter = nameOfCharacter
-            self.pointsOfLifeOfCharacter = pointsOfLifeOfCharacter
-            self.description = description
-            self.weapon = weapon
-            self.weaponDamages = weaponDamages
-            self.healing = healing
+    init(){
+        var characterType: [String] = ["dwarf"]
+        var nameOfCharacter: String
+        var pointsOfLifeOfCharacter: Int = 50
+        var description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"
+        var weapon: String = "Axe"
+        var weaponDamages: Int = 100
+        var healing: Bool = false
+        super.init(characterType: characterType,
+                   nameOfCharacter: nameOfCharacter,
+                   pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
+                   description: description,
+                   weapon: weapon,
+                   weaponDamages: weaponDamages,
+                   healing: healing)
         }
 }

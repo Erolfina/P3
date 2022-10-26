@@ -8,21 +8,21 @@
 import Foundation
 
 class Warrior: Character {
-    super.init(
-        type: [String] = ["warrior"],
-        nameOfCharacter: String,
-        pointsOfLifeOfCharacter: Int = 75,
-        description: String = "L'attaquant classique. Un bon guerrier !",
-        weapon: String = "Sword",
-        weaponDamages: Int = 75,
-        healing: Bool = false) {
-            self.type = type
-            self.nameOfCharacter = nameOfCharacter
-            self.pointsOfLifeOfCharacter = pointsOfLifeOfCharacter
-            self.description = description
-            self.weapon = weapon
-            self.weaponDamages = weaponDamages
-            self.healing = healing
-        }
+    init(){
+    var characterType: [String] = ["warrior"]
+    var nameOfCharacter: String
+    var pointsOfLifeOfCharacter: Int = 75
+    var description: String = "L'attaquant classique. Un bon guerrier !"
+    var weapon: String = "Sword"
+    var weaponDamages: Int = 75
+    var healing: Bool = false
+        super.init(characterType: characterType,
+                   nameOfCharacter: nameOfCharacter,
+                   pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
+                   description: description,
+                   weapon: weapon,
+                   weaponDamages: weaponDamages,
+                   healing: healing)
+    }
+    }
 
-}
