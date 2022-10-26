@@ -9,7 +9,7 @@ import Foundation
 
 class Colossus: Character {
     init(){
-        var characterType: [String] = ["colossus"]
+        var characterType= Category.colossus
         var nameOfCharacter: String
         var pointsOfLifeOfCharacter: Int = 200
         var description: String = "Imposant et très résistant, mais il ne vous fera pas bien mal."

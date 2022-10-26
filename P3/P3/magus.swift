@@ -9,7 +9,7 @@ import Foundation
 
 class Magus: Character {
     init(){
-        var characterType: [String] = ["magus"]
+        var characterType = Category.magus
         var nameOfCharacter: String
         var pointsOfLifeOfCharacter: Int = 200
         var description: String = "Son talent ? Soigner les membres de son équipe"
@@ -24,4 +24,8 @@ class Magus: Character {
                        weaponDamages: weaponDamages,
                        healing: healing)
         }
+    
+   
+    
+    
 }

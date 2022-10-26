@@ -9,7 +9,7 @@ import Foundation
 
 class Dwarf: Character{
     init(){
-        var characterType: [String] = ["dwarf"]
+        var characterType = Category.dwarf
         var nameOfCharacter: String
         var pointsOfLifeOfCharacter: Int = 50
         var description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"

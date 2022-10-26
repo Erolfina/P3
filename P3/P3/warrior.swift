@@ -9,7 +9,7 @@ import Foundation
 
 class Warrior: Character {
     init(){
-    var characterType: [String] = ["warrior"]
+    var characterType= Category.warrior
     var nameOfCharacter: String
     var pointsOfLifeOfCharacter: Int = 75
     var description: String = "L'attaquant classique. Un bon guerrier !"
