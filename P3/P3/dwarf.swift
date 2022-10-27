@@ -9,14 +9,14 @@ import Foundation
 
 class Dwarf: Character{
     init(){
-        var characterType = Category.dwarf
-        var nameOfCharacter: String
-        var pointsOfLifeOfCharacter: Int = 50
-        var description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"
-        var weapon: String = "Axe"
-        var weaponDamages: Int = 100
-        var healing: Bool = false
-        super.init(characterType: characterType,
+        let characterType = Category.dwarf
+        let nameOfCharacter: [String] = []
+        let pointsOfLifeOfCharacter: Int = 50
+        let description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"
+        let weapon: String = "Axe"
+        let weaponDamages: Int = 100
+        let healing: Bool = false
+            super.init(characterType: characterType,
                    nameOfCharacter: nameOfCharacter,
                    pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
                    description: description,

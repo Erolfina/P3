@@ -9,13 +9,13 @@ import Foundation
 
 class Magus: Character {
     init(){
-        var characterType = Category.magus
-        var nameOfCharacter: String
-        var pointsOfLifeOfCharacter: Int = 200
-        var description: String = "Son talent ? Soigner les membres de son équipe"
-        var weapon: String = "Wand"
-        var weaponDamages: Int = 20
-        var healing: Bool = true
+        let characterType = Category.magus
+        let nameOfCharacter: [String] = []
+        let pointsOfLifeOfCharacter: Int = 200
+        let description: String = "Son talent ? Soigner les membres de son équipe"
+        let weapon: String = "Wand"
+        let weaponDamages: Int = 20
+        let healing: Bool = true
             super.init(characterType: characterType,
                        nameOfCharacter: nameOfCharacter,
                        pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
@@ -24,8 +24,4 @@ class Magus: Character {
                        weaponDamages: weaponDamages,
                        healing: healing)
         }
-    
-   
-    
-    
 }
