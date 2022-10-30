@@ -10,7 +10,7 @@ import Foundation
 class Colossus: Character {
     init(){
         let characterType = Category.colossus
-        let nameOfCharacter: [String] = []
+        let nameOfCharacter: String = "Pupuce the Great"
         let pointsOfLifeOfCharacter: Int = 200
         let description: String = "Imposant et très résistant, mais il ne vous fera pas bien mal."
         let weapon: String = "sword"

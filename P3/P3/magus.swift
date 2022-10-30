@@ -10,7 +10,7 @@ import Foundation
 class Magus: Character {
     init(){
         let characterType = Category.magus
-        let nameOfCharacter: [String] = []
+        let nameOfCharacter: String = "Harry"
         let pointsOfLifeOfCharacter: Int = 200
         let description: String = "Son talent ? Soigner les membres de son équipe"
         let weapon: String = "Wand"

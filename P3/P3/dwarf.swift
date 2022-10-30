@@ -10,7 +10,7 @@ import Foundation
 class Dwarf: Character{
     init(){
         let characterType = Category.dwarf
-        let nameOfCharacter: [String] = []
+        let nameOfCharacter: String = "Grumpy"
         let pointsOfLifeOfCharacter: Int = 50
         let description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"
         let weapon: String = "Axe"

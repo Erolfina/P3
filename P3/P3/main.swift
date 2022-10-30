@@ -11,4 +11,7 @@ var colossus = Colossus()
 var magus = Magus()
 var dwarf = Dwarf()
 var warrior = Warrior()
+var character = Character(characterType: .dwarf, nameOfCharacter: "Bob", pointsOfLifeOfCharacter: 150, description: "aya!", weapon: "stick", weaponDamages: 70)
+
+character.namingCharacter()
 

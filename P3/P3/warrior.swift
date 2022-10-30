@@ -10,7 +10,7 @@ import Foundation
 class Warrior: Character {
     init(){
         let characterType = Category.warrior
-        let nameOfCharacter: [String] = []
+        let nameOfCharacter: String = "Tinkerbell"
         let pointsOfLifeOfCharacter: Int = 75
         let description: String = "L'attaquant classique. Un bon guerrier !"
         let weapon: String = "Sword"
