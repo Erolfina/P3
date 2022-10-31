@@ -13,6 +13,13 @@ class Game {
     
     //  game starts : if numberOfPlayer == 2 + Player == 3 Character
     func startGame() {
+        if numberOfPlayer == 2{
+            player1.namingPlayer()
+            player2.namingPlayer()
+        }else{
+            print ("We are wainting for a second player ")
+        }
+        
         
     }
     
