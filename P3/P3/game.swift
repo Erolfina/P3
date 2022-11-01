@@ -12,27 +12,25 @@ class Game {
     var numberOfPlayer: Int = 2
     
     //  game starts : if numberOfPlayer == 2 + Player == 3 Characters
-    func startGame(playerOne: Player, playerTwo:Player) {
-        self.setNameOfPlayer(player: playerOne, playerName: "")
-        self.setNameOfPlayer(player: playerTwo, playerName: playerOne.playerName)
+    func openingGame(firstPlayer: Players, secondPlayer: Players){
+        print ("""
+🏹Welcome to Battle of Heroes, where two teams of three adventurers will fight to get the title of Heroes!
+Let's meet our two opponents!
+
+""")
+        player1.setNameOfPlayer(/*player: player1,*/ playerName: "")
+        player1.chooseYourCharacters()
+        player2.setNameOfPlayer(/*player: player2,*/ playerName: player1.playerName)
+        player2.chooseYourCharacters()
     }
     
-    func checkIfNameOfPlayerIsEmpty()->Bool{
-        let playerNameIsEmpty = true
-        
-        while playerNameIsEmpty == true {
-            if let playerNamePrompt = readLine() { //parameter for getting the name given by player
-                if playerNamePrompt == "" {
-                    print ("Euh ... Who are you? Please give me your name!")
-                    return true
-                }else{
-                    return false
-                }
-            }
-        }
+    func startGame(firstPlayer: Players, secondPlayer:Players) {
+       // self.setNameOfPlayer(player: playerOne, playerName: "")
+      //  self.setNameOfPlayer(player: playerTwo, playerName: playerOne.playerName)
     }
     
-    func setNameOfPlayer(player: Player, playerName: String) {
+    
+    /*func setNameOfPlayer(player: Player, playerName: String) {
         print ("Hello stranger \(player.playerId)! What's your name? ")
         var playerNameIsEmpty = true
         
@@ -60,7 +58,11 @@ class Game {
         }else {
             return false
         }
-    }
+    }*/
+     
+   /* func chooseYourCharacters(player1: Player, playerName: String){
+        print ("Hello \(player.playerName), choose your first hero : ")
+    }*/
 
     
     //  end of the game : if lifepoints = 0
