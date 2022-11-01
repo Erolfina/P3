@@ -7,13 +7,16 @@
 
 import Foundation
 
+//game initialisation
 var game = Game()
 
-//initialisation de 2 joueurs
-var player1 = Player(playerName: "bob", pointsOfLifeOfPlayer: 200, playerId: 1)
-var player2 = Player(playerName: "loulou", pointsOfLifeOfPlayer: 200, playerId: 2)
+//initialisation of 2 players
+var player1 = Player(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 1)
+var player2 = Player(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 2)
 
-//initialisation des character
+
+
+//character initialisation
 var character = Character(characterType: .dwarf, nameOfCharacter: "Bob", pointsOfLifeOfCharacter: 150, description: "aya!", weapon: "stick", weaponDamages: 70)
 
 
@@ -24,7 +27,8 @@ var warrior = Warrior()
 
 
 
-game.startGame()
+game.startGame(playerOne: player1, playerTwo: player2)
+print(player1.playerName)
+print(player2.playerName)
 //character.namingCharacter()
-character.namingCharacter()
 
