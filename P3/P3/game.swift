@@ -19,9 +19,9 @@ Let's meet our two opponents!
 
 """)
         player1.setNameOfPlayer(/*player: player1,*/ playerName: "")
-        player1.chooseYourCharacters()
+        messages.messageChooseYourCharacters()
         player2.setNameOfPlayer(/*player: player2,*/ playerName: player1.playerName)
-        player2.chooseYourCharacters()
+        messages.messageChooseYourCharacters()
     }
     
     func startGame(firstPlayer: Players, secondPlayer:Players) {

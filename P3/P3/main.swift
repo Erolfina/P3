@@ -10,14 +10,16 @@ import Foundation
 //game initialisation
 var game = Game()
 
-//initialisation of 2 players
-var player1 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 1,character: [])
-var player2 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 2,character: [])
+//initialisation of all print of the game
+var messages = Messages()
 
+//initialisation of 2 players
+var player1 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 1)
+var player2 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 2)
 
 
 //character initialisation
-var character = Character(characterType: .dwarf, nameOfCharacter: "Bob", pointsOfLifeOfCharacter: 150, description: "aya!", weapon: "stick", weaponDamages: 70)
+var character = Character(characterType: .dwarf, nameOfCharacter: "Bob", pointsOfLifeOfCharacter: 150, description: "aya!", weapon: "stick", weaponDamages: 70, healing: true)
 
 
 var colossus = Colossus()
