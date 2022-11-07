@@ -10,12 +10,9 @@ import Foundation
 final class Game {
     
     //  game starts : if numberOfPlayer == 2 + Player == 3 Characters
-    func openingGame(firstPlayer: Players, secondPlayer: Players){
+    func openingGame(){
         messages.printOpeningGame()
-        player1.setNameOfPlayer(playerName: "")
-        player1.playerChooseTheirCharacters(playerCharactersType: [])
-        player2.setNameOfPlayer(playerName: player1.playerName)
-        player2.playerChooseTheirCharacters(playerCharactersType: [])
+        players.setTwoPlayers()
     }
     
     private func startGame(firstPlayer: Players, secondPlayer:Players) {
