@@ -14,12 +14,12 @@ var game = Game()
 var messages = Messages()
 
 //initialisation of 2 players
-var player1 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 1)
-var player2 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 2)
+var player1 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 1, playerCharactersType: [.colossus], playerCharactersName: [""])
+var player2 = Players(playerName: "", pointsOfLifeOfPlayer: 200, playerId: 2, playerCharactersType: [.colossus], playerCharactersName: [""])
 
 
 //character initialisation
-var character = Character(characterType: .dwarf, nameOfCharacter: "Bob", pointsOfLifeOfCharacter: 150, description: "aya!", weapon: "stick", weaponDamages: 70, healing: true)
+var character = Character(characterType: .dwarf, pointsOfLifeOfCharacter: 150, description: "", weapon: "", weaponDamages: 70, healing: true)
 
 
 var colossus = Colossus()
@@ -29,11 +29,6 @@ var warrior = Warrior()
 
 
 game.openingGame(firstPlayer: player1, secondPlayer: player2)
-//game.chooseYourCharacters(player1: player1, player2: player2)
-//game.startGame(playerOne: player1, playerTwo: player2)
-//player1.chooseYourCharacters(playername1: player1, playername2: player2)
-//player1.setNameOfPlayer(player: player1, playerName: "")
-//player1.chooseYourCharacters(player1: player1, player2: player2)
-//player2.setNameOfPlayer(player: player2, playerName: player1.playerName)
-//player2.chooseYourCharacters(player1: player1, player2: player2)
+
+
 
