@@ -13,7 +13,7 @@ final class Messages {
     func messageChooseYourCharacters() {
         
         print ("""
-            Please, choose your first hero :
+            Please, choose your hero :
             ⚔️ 1 - Warrior : \(warrior.description) || Points of Life \(warrior.pointsOfLifeOfCharacter) || Weapon : \(warrior.weapon) || Weapon damages : \(warrior.weaponDamages) || Healing ? \(warrior.healing) ||
             🪄 2 - Magus : \(magus.description) ||
             Points of Life : \(magus.pointsOfLifeOfCharacter) || Weapon : \(magus.weapon) || Weapon damages : \(magus.weaponDamages) || Healing ? \(magus.healing) ||
