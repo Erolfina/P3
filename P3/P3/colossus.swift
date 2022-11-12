@@ -9,14 +9,14 @@ import Foundation
 
 final class Colossus: Character {
     init() {
-        let characterType = Category.colossus
-        let pointsOfLifeOfCharacter: Int = 200
+        let characterType: String = "Colossus"
+        let characterPointsOfLife: Int = 200
         let description: String = "Imposant et très résistant, mais il ne vous fera pas bien mal."
         let weapon: String = "sword"
-        let weaponDamages: Int = 50
+        let weaponDamages: Int = 10
         let healing: Bool = false
         super.init(characterType: characterType,
-                   pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
+                   characterPointsOfLife: characterPointsOfLife,
                    description: description,
                    weapon: weapon,
                    weaponDamages: weaponDamages,

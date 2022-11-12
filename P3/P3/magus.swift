@@ -7,16 +7,16 @@
 
 import Foundation
 
-final class Magus: Character {
+ final class Magus: Character {
     init(){
-        let characterType = Category.magus
-        let pointsOfLifeOfCharacter: Int = 200
+        let characterType : String = "Magus"
+        let characterPointsOfLife: Int = 200
         let description: String = "Son talent ? Soigner les membres de son équipe"
         let weapon: String = "Wand"
-        let weaponDamages: Int = 20
+        let weaponDamages: Int = 5
         let healing: Bool = true
             super.init(characterType: characterType,
-                       pointsOfLifeOfCharacter: pointsOfLifeOfCharacter,
+                       characterPointsOfLife: characterPointsOfLife,
                        description: description,
                        weapon: weapon,
                        weaponDamages: weaponDamages,
