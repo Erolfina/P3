@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Category {
-    case colossus
-    case dwarf
-    case magus
-    case warrior
+enum Category : String {
+    case colossus = "Colossus"
+    case dwarf = "Dwarf"
+    case magus = "Magus"
+    case warrior = "Warrior"
 }
 
 class Character {

@@ -38,7 +38,7 @@ final class Game {
      ==> player2PointofLife = Player2PointsOfLife - Player1Character1Weapon
      
      }else if choix = heal
-     Player1Character1 heal Player1Character2
+     Player1Character1 heal Player1Character1
      ==> message Player1Character1 a inflige X soin a Player1Character2 choisi
      (X points = point de heal de Player1Character1Weapon)
      ==> player2PointofLife = Player2PointsOfLife + Player1Character1Weapon
@@ -57,8 +57,10 @@ final class Game {
     static func chooseFighter(player: Players) {
         
         if let characterChoice = readLine(){
+            guard var intchar = Int(characterChoice) else { return }
+                intchar -= 1
             
-            if player.checkHealingPower() == false { //check if the character chose is a healer or not
+            if player.checkHealingPower(character: player.playerCharactersType[intchar]) == false { //check if the character chose is a healer or not
                 switch Int(characterChoice) {
                 case 1:
                     print ("\(player.playerCharactersName[0]) is ready to fight")
@@ -69,19 +71,12 @@ final class Game {
                 default:
                     print ("You must chosse between 1 and 3")
                 }
-            }else if player.checkHealingPower() == true  {
+            }else if player.checkHealingPower(character: player.playerCharactersType[intchar]) == true  {
                 Messages.messageHealingOrAttackingChoice() // if character is a healer, give them choice to heal or attack
-                switch Int(characterChoice) {
-                case 1:
-                    Messages.messageChooseTargetToHeal(player: player)
-                case 2:
-                    print (" Who is your target ?")
-                default:
-                    print ("You must chosse between 1 and 3")
+                Players.healerChooseFightingOrHealing()
                 }
             }
         }
-    }
    
 
     static func chooseTargetToAttack(attackingPlayer: Players, defensingPlayer: Players) {
