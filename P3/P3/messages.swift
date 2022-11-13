@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class Messages {
+final class PrintMessages {
     
     // MARK: Privates Methods
     
-    static func messageChooseYourCharacters() {
+    static func chooseYourCharacters() {
         
         print ("""
             Please, choose your hero :
@@ -23,7 +23,7 @@ final class Messages {
 """)
     }
     
-    static func messageOpeningGame() {
+    static func openingGame() {
         print ("""
 🏹Welcome to Battle of Heroes, where two teams of three adventurers will fight to get the title of Heroes!
 Let's meet our two opponents!
@@ -31,7 +31,7 @@ Let's meet our two opponents!
 """)
     }
     
-    static func messageGameReadyToStart (){
+    static func gameReadyToStart (){
         print ("""
 Everybody is set up!
 Our first opponenent : \(player1.playerName) with their 3 fighters :
@@ -50,7 +50,7 @@ With a total of \(player2.getPlayerPointsOfLife()) points of life !
 """)
     }
     
-    static func messageChooseFighter(player: Players) {
+    static func chooseFighter(player: Players) {
         print("""
     
     Let's start the fight!
@@ -62,10 +62,10 @@ With a total of \(player2.getPlayerPointsOfLife()) points of life !
     """)
     }
     
-    static func messageChooseTargetToAttack(player: Players) {
+    static func chooseTargetToAttack(player: Players) {
         
         print("""
-        
+        Who do you want to heal ? 
                 1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
                 2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
                 3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
@@ -73,7 +73,7 @@ With a total of \(player2.getPlayerPointsOfLife()) points of life !
         """)
     }
     
-    static func messageHealingOrAttackingChoice() {
+    static func healingOrAttackingChoice() {
         print ("""
     What do you want to do?
     1. Healing?
@@ -81,7 +81,7 @@ With a total of \(player2.getPlayerPointsOfLife()) points of life !
     """)
     }
     
-    static func messageChooseTargetToHeal(player: Players) {
+    static func chooseTargetToHeal(player: Players) {
         
         print("""
                 1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
