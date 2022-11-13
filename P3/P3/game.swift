@@ -12,10 +12,10 @@ final class Game {
     // MARK: Privates Methods
     
     //Messages when you open the game and set up your characters
-     static func openingGame(){
-        Messages.printOpeningGame()
+    static func openingGame() {
+        PrintMessages.openingGame()
         setTwoPlayers()
-        Messages.printGameReadyToStart()
+        PrintMessages.gameReadyToStart()
     }
     
     //players give their names and choose their character and characters' name
@@ -27,13 +27,102 @@ final class Game {
     }
     
     
-    private func startFight() {
+    /* deroulement du combat :
+     Player1 choisi son characterChoisi = Player1Character1
+     player1 choisi action de Player1Character1
+     
+     si choix = attaque {
+     player1 attaque player2.characterChoisi (player2Character2)
+     ==> message Player1Character1 a inflige X degats a player2Character2
+     (X points = point de damages de Player1Character1Weapon)
+     ==> player2PointofLife = Player2PointsOfLife - Player1Character1Weapon
+     
+     }else if choix = heal
+     Player1Character1 heal Player1Character1
+     ==> message Player1Character1 a inflige X soin a Player1Character2 choisi
+     (X points = point de heal de Player1Character1Weapon)
+     ==> player2PointofLife = Player2PointsOfLife + Player1Character1Weapon
+     */
+    
+    static func startFight() {
+        PrintMessages.chooseFighter(player: player1)
+        self.firstPlayerFight(attackingPlayer: player1, defensingPlayer: player2)
     }
     
-    private func stopGame() {
+    static func attack(attackingPlayer: Players, defensingPlayer: Players) {
+        PrintMessages.chooseTargetToAttack(player: attackingPlayer)
+        
+        if let targetChoice = readLine() {
+            switch Int(targetChoice) {
+            case 1: print ("""
+                       \(defensingPlayer.playerCharactersName[0]) has received \(attackingPlayer.playerCharactersWeaponDamages[0]) points of damages.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            case 2: print ("""
+                       \(defensingPlayer.playerCharactersName[1]) has received \(attackingPlayer.playerCharactersWeaponDamages[1]) points of damages.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            case 3: print ("""
+                       \(defensingPlayer.playerCharactersName[2]) has received \(attackingPlayer.playerCharactersWeaponDamages[2]) points of damages.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            default: print ("You must chosse between 1 and 3")
+            }
+        }
     }
     
-  
+    static func heal(player: Players) {
+        PrintMessages.chooseTargetToAttack(player: player)
+        
+        if let targetChoice = readLine() {
+            switch Int(targetChoice) {
+            case 1: print ("""
+                       \(player.playerCharactersName[0]) has received \(player.playerCharactersWeaponDamages[0]) points of Healing.
+                       \(player.playerName) has \(player.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            case 2: print ("""
+                       \(player.playerCharactersName[1]) has received \(player.playerCharactersWeaponDamages[1]) points of damages.
+                       \(player.playerName) has \(player.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            case 3: print ("""
+                       \(player.playerCharactersName[2]) has received \(player.playerCharactersWeaponDamages[2]) points of damages.
+                       \(player.playerName) has \(player.getPlayerPointsOfLife()) points of life remaining.
+                       """)
+            default: print ("You must chosse between 1 and 3")
+            }
+        }
+    }
     
+    private static func firstPlayerFight(attackingPlayer: Players, defensingPlayer: Players) {
+        if let characterChoice = readLine(){
+            guard var intchar = Int(characterChoice) else { return }
+            intchar -= 1
+            
+            if attackingPlayer.checkHealingPower(character: attackingPlayer.playerCharactersType[intchar]) == false { //check if the character chose is a healer or not
+                switch Int(characterChoice) {
+                case 1:
+                    print ("\(attackingPlayer.playerCharactersName[0]) is ready to fight")
+                case 2:
+                    print ("\(attackingPlayer.playerCharactersName[1]) is ready to fight")
+                case 3:
+                    print ("\(attackingPlayer.playerCharactersName[2]) is ready to fight")
+                default:
+                    print ("You must chosse between 1 and 3")
+                }
+                self.attack(attackingPlayer: player1, defensingPlayer: player2)
+                
+            }else if attackingPlayer.checkHealingPower(character: attackingPlayer.playerCharactersType[intchar]) == true {
+                PrintMessages.healingOrAttackingChoice() // if character is a healer, give them choice to heal or attack
+                if Players.healerChooseHealing() == true {
+                    self.heal(player: player1)
+                }else{
+                    self.attack(attackingPlayer: player1, defensingPlayer: player2)
+                }
+            }
+        }
+    }
     
 }
+        
+    
+
