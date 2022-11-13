@@ -7,26 +7,25 @@
 
 import Foundation
 
-//game initialisation
-//var game = Game()
+// MARK: INITIALISATION
 
-//initialisation of all print of the game
-//var messages = Messages()
-
-//initialisation of players
+var game = Game()
+//initialisation of 2 players
 var player1 = Players()
 var player2 = Players()
 
 //character initialisation
-//var character = Character(characterType: "" , characterPointsOfLife: 0, description: "", weapon: "", weaponDamages: 70, healing: true)
+var character = Character(characterType: "" , characterPointsOfLife: 0, description: "", weapon: "", weaponDamages: 70, healing: true)
 
 var magus = Magus()
 var colossus = Colossus()
 var warrior = Warrior()
 var dwarf = Dwarf()
 
-Game.openingGame()
+// MARK: METHODES
 
+Game.openingGame()
+Game.startFight()
 
 
 

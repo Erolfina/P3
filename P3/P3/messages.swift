@@ -23,7 +23,7 @@ final class Messages {
 """)
     }
     
-    static func printOpeningGame() {
+    static func messageOpeningGame() {
         print ("""
 🏹Welcome to Battle of Heroes, where two teams of three adventurers will fight to get the title of Heroes!
 Let's meet our two opponents!
@@ -31,10 +31,10 @@ Let's meet our two opponents!
 """)
     }
     
-    static func printGameReadyToStart (){
+    static func messageGameReadyToStart (){
         print ("""
 Everybody is set up!
-Our first opponenent : \(player1.playerName) with their 3 fighter :
+Our first opponenent : \(player1.playerName) with their 3 fighters :
 - \(player1.playerCharactersName[0]), \(player1.playerCharactersType[0])
 - \(player1.playerCharactersName[1]), \(player1.playerCharactersType[1])
 - \(player1.playerCharactersName[2]), \(player1.playerCharactersType[2])
@@ -42,15 +42,53 @@ With a total of \(player1.getPlayerPointsOfLife()) points of life !
 
 VS
 
-Our second opponenent : \(player2.playerName) with their 3 fighter :
+Our second opponenent : \(player2.playerName) with their 3 fighters :
 - \(player2.playerCharactersName[0]), \(player2.playerCharactersType[0])
 - \(player2.playerCharactersName[1]), \(player2.playerCharactersType[1])
 - \(player2.playerCharactersName[2]), \(player2.playerCharactersType[2])
 With a total of \(player2.getPlayerPointsOfLife()) points of life !
-
-
-
 """)
+    }
+    
+    static func messageChooseFighter(player: Players) {
+        print("""
+    
+    Let's start the fight!
+    
+        \(player.playerName) choose your first fighter :
+        1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
+        2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
+        3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
+    """)
+    }
+    
+    static func messageChooseTargetToAttack(player: Players) {
+        
+        print("""
+        
+                1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
+                2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
+                3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
+        
+        """)
+    }
+    
+    static func messageHealingOrAttackingChoice() {
+        print ("""
+    What do you want to do?
+    1. Healing?
+    2. Attacking ?
+    """)
+    }
+    
+    static func messageChooseTargetToHeal(player: Players) {
+        
+        print("""
+                1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
+                2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
+                3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
+        
+        """)
     }
 }
 
