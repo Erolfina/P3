@@ -35,29 +35,38 @@ Let's meet our two opponents!
         print ("""
 Everybody is set up!
 Our first opponenent : \(player1.playerName) with their 3 fighters :
-- \(player1.playerCharactersName[0]), \(player1.playerCharactersType[0])
-- \(player1.playerCharactersName[1]), \(player1.playerCharactersType[1])
-- \(player1.playerCharactersName[2]), \(player1.playerCharactersType[2])
+""")
+        
+        for index in 0..<player1.playerCharactersName.count{
+            print ("""
+- \(player1.playerCharactersName[index]), \(player1.playerCharactersType[index])
+
 With a total of \(player1.setupPlayerPointsOfLife()) points of life !
 
 VS
 
 Our second opponenent : \(player2.playerName) with their 3 fighters :
-- \(player2.playerCharactersName[0]), \(player2.playerCharactersType[0])
-- \(player2.playerCharactersName[1]), \(player2.playerCharactersType[1])
-- \(player2.playerCharactersName[2]), \(player2.playerCharactersType[2])
+""")
+            for index in 0..<player2.playerCharactersName.count{
+                print ("""
+- \(player2.playerCharactersName[index]), \(player2.playerCharactersType[index])
+            
 With a total of \(player2.setupPlayerPointsOfLife()) points of life !
 """)
+            }
+        }
     }
     
     static func chooseFighter(player: Players) { //integrer fucntion de calcul de vue du character
-        print("""
-    
-        \(player.playerName) choose your first fighter :
-        1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife[0]) points of life.
-        2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
-        3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
-    """)
+        print("\(player.playerName) choose your first fighter :")
+        
+        for index in 0..<player.playerCharactersName.count{
+            if player.playerCharactersLife[index] > 0 {
+                print("""
+                \(index+1).\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
+                """)
+            }
+        }
     }
     
     static func chooseTargetToAttack(player: Players) { //integrer fucntion de calcul de vue du character
@@ -66,9 +75,8 @@ With a total of \(player2.setupPlayerPointsOfLife()) points of life !
         for index in 0..<player.playerCharactersName.count{
             if player.playerCharactersLife[index] > 0 {
             }
-           
-             print("""
-                     \([index+1]) \(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
+            print("""
+                     \(index+1). \(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
         """)
         }
     }
@@ -82,15 +90,16 @@ With a total of \(player2.setupPlayerPointsOfLife()) points of life !
     }
     
     static func chooseTargetToHeal(player: Players) { //integrer fucntion de calcul de vue du character
+        print("Who do you want to heal ?")
         
-        print("""
-                Who do you want to heal ?
-                1.\(player.playerCharactersName[0]), the \(player.playerCharactersType[0]) fighting with a \(player.playerCharactersWeapon[0]) (\(player.playerCharactersWeaponDamages[0]) damages point) and \(player.playerCharactersLife [0]) points of life.
-                2.\(player.playerCharactersName[1]), the \(player.playerCharactersType[1]) fighting with a \(player.playerCharactersWeapon[1]) (\(player.playerCharactersWeaponDamages[1]) damages point) and \(player.playerCharactersLife [1]) points of life.
-                3.\(player.playerCharactersName[2]), the \(player.playerCharactersType[2]) fighting with a \(player.playerCharactersWeapon[2]) (\(player.playerCharactersWeaponDamages[2]) damages point) and \(player.playerCharactersLife [2]) points of life.
-        
+        for index in 0..<player.playerCharactersName.count{
+            if player.playerCharactersLife[index] > 0 {
+            }
+            print("""
+                           \(index+1)\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
         """)
+        }
     }
+    
 }
-
 

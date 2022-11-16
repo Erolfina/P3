@@ -64,7 +64,7 @@ final class Game {
     }
     
     static func heal(player: Players) {
-        PrintMessages.chooseTargetToAttack(player: player)
+        PrintMessages.chooseTargetToHeal(player: player)
         
         if let targetChoice = readLine() {
             switch Int(targetChoice) {
