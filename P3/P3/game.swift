@@ -29,11 +29,11 @@ final class Game {
     
     static func startFight() {
        
-        while player1.getPlayerPointsOfLife() != 0 || player2.getPlayerPointsOfLife() != 0 {
+        while player1.setupPlayerPointsOfLife() != 0 || player2.setupPlayerPointsOfLife() != 0 {
             self.firstPlayerFight(attackingPlayer: player1, defensingPlayer: player2)
-            print ("\( player1.getPlayerPointsOfLife())")
+            print ("\( player1.setupPlayerPointsOfLife())")
             self.secondPlayerFight(attackingPlayer: player2, defensingPlayer: player1)
-            print ("\( player2.getPlayerPointsOfLife())")
+            print ("\( player2.setupPlayerPointsOfLife())")
         }
     }
     
@@ -45,16 +45,19 @@ final class Game {
             switch Int(targetChoice) {
             case 1: print ("""
                        \(defensingPlayer.playerCharactersName[0]) has received \(attackingPlayer.playerCharactersWeaponDamages[0]) points of damages.
-                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[0]) points of life remaining.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.setupPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[0]) points of life remaining.
                        """)
+                    defensingPlayer.playerCharactersLife[0] -= attackingPlayer.playerCharactersWeaponDamages[0]  //calculate new characterLifePoint
             case 2: print ("""
                        \(defensingPlayer.playerCharactersName[1]) has received \(attackingPlayer.playerCharactersWeaponDamages[1]) points of damages.
-                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[1]) points of life remaining.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.setupPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[1]) points of life remaining.
                        """)
+                    defensingPlayer.playerCharactersLife[1] -= attackingPlayer.playerCharactersWeaponDamages[1] //calculate new characterLifePoint
             case 3: print ("""
                        \(defensingPlayer.playerCharactersName[2]) has received \(attackingPlayer.playerCharactersWeaponDamages[2]) points of damages.
-                       \(defensingPlayer.playerName) has \(defensingPlayer.getPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[2]) points of life remaining.
+                       \(defensingPlayer.playerName) has \(defensingPlayer.setupPlayerPointsOfLife() - attackingPlayer.playerCharactersWeaponDamages[2]) points of life remaining.
                        """)
+                    defensingPlayer.playerCharactersLife[2] -= attackingPlayer.playerCharactersWeaponDamages[2] //calculate new characterLifePoint
             default: print ("You must chosse between 1 and 3")
             }
         }
@@ -67,16 +70,19 @@ final class Game {
             switch Int(targetChoice) {
             case 1: print ("""
                        \(player.playerCharactersName[0]) has received \(player.playerCharactersWeaponDamages[0]) points of Healing.
-                       \(player.playerName) has \(player.getPlayerPointsOfLife() + player.playerCharactersWeaponDamages[0]) points of life remaining.
+                       \(player.playerName) has \(player.setupPlayerPointsOfLife() + player.playerCharactersWeaponDamages[0]) points of life remaining.
                        """)
+                player.playerCharactersLife[0] -= player.playerCharactersWeaponDamages[0]
             case 2: print ("""
                        \(player.playerCharactersName[1]) has received \(player.playerCharactersWeaponDamages[1]) points of damages.
-                       \(player.playerName) has \(player.getPlayerPointsOfLife() + player.playerCharactersWeaponDamages[1]) points of life remaining.
+                       \(player.playerName) has \(player.setupPlayerPointsOfLife() + player.playerCharactersWeaponDamages[1]) points of life remaining.
                        """)
+                player.playerCharactersLife[1] -= player.playerCharactersWeaponDamages[1]
             case 3: print ("""
                        \(player.playerCharactersName[2]) has received \(player.playerCharactersWeaponDamages[2]) points of damages.
-                       \(player.playerName) has \(player.getPlayerPointsOfLife() + player.playerCharactersWeaponDamages[2]) points of life remaining.
+                       \(player.playerName) has \(player.setupPlayerPointsOfLife() + player.playerCharactersWeaponDamages[2]) points of life remaining.
                        """)
+                player.playerCharactersLife[2] -= player.playerCharactersWeaponDamages[2]
             default: print ("You must chosse between 1 and 3")
             }
         }
@@ -115,7 +121,9 @@ final class Game {
     private static func secondPlayerFight(attackingPlayer: Players, defensingPlayer: Players) {
         PrintMessages.chooseFighter(player: player2)
         if let characterChoice = readLine(){
-            guard var intchar = Int(characterChoice) else { return }
+            guard var intchar = Int(characterChoice) else {
+                return
+            }
             intchar -= 1
             
             if Players.checkHealingPower(character: attackingPlayer.playerCharactersType[intchar]) == false { //check if the character chose is a healer or not

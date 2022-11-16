@@ -17,7 +17,7 @@ enum Category : String {
 class Character {
     
     let characterType: String
-    let characterPointsOfLife: Int
+    var characterPointsOfLife: Int
     let description: String
     let weapon: String
     let weaponDamages: Int
