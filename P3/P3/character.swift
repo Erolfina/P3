@@ -31,5 +31,7 @@ class Character {
         self.weaponDamages = weaponDamages
         self.healing = healing
     }
+    
+   
 }
 
