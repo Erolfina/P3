@@ -36,31 +36,31 @@ Let's meet our two opponents!
 Everybody is set up!
 Our first opponenent : \(player1.playerName) with their 3 fighters :
 """)
-        
         for index in 0..<player1.playerCharactersName.count{
             print ("""
 - \(player1.playerCharactersName[index]), \(player1.playerCharactersType[index])
-
+""")
+        }
+        print ("""
 With a total of \(player1.setupPlayerPointsOfLife()) points of life !
 
 VS
 
 Our second opponenent : \(player2.playerName) with their 3 fighters :
 """)
-            for index in 0..<player2.playerCharactersName.count{
-                print ("""
-- \(player2.playerCharactersName[index]), \(player2.playerCharactersType[index])
-            
-With a total of \(player2.setupPlayerPointsOfLife()) points of life !
-""")
-            }
+        for index in 0..<player2.playerCharactersName.count{
+            print ("""
+ - \(player2.playerCharactersName[index]), \(player2.playerCharactersType[index])
+ """)
         }
+        print ("With a total of \(player2.setupPlayerPointsOfLife()) points of life !")
+        
     }
     
     static func chooseFighter(player: Players) { //integrer fucntion de calcul de vue du character
         print("\(player.playerName) choose your first fighter :")
         
-        for index in 0..<player.playerCharactersName.count{
+        for index in 0..<player.playerCharactersName.count{ //check if the fighter is alive
             if player.playerCharactersLife[index] > 0 {
                 print("""
                 \(index+1).\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
@@ -73,7 +73,7 @@ With a total of \(player2.setupPlayerPointsOfLife()) points of life !
         print("Who do you want to fight ?")
         
         for index in 0..<player.playerCharactersName.count{
-            if player.playerCharactersLife[index] > 0 {
+            if player.playerCharactersLife[index] > 0 { //check if the target is alive
             }
             print("""
                      \(index+1). \(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
@@ -93,13 +93,19 @@ With a total of \(player2.setupPlayerPointsOfLife()) points of life !
         print("Who do you want to heal ?")
         
         for index in 0..<player.playerCharactersName.count{
-            if player.playerCharactersLife[index] > 0 {
-            }
-            print("""
+            if player.playerCharactersLife[index] > 0 { //check if the target is alive
+                print("""
                            \(index+1)\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
         """)
+            }
         }
     }
     
+    static func printSwitchAttack(defensingCharacterName: String, attackingWeaponDamages: Int, defensingPlayerName: String, defensingPlayerLife: Int) {
+        print("""
+        \(defensingCharacterName) has received \(attackingWeaponDamages) points of damages.
+        \(defensingPlayerName) has \(defensingPlayerLife) points of life remaining.
+        """)
+    }
 }
 
