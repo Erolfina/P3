@@ -15,11 +15,13 @@ final class Dwarf: Character{
         let weapon: String = "Axe"
         let weaponDamages: Int = 30
         let healing: Bool = false
+        let healingPoints: Int = 0
             super.init(characterType: characterType,
                    characterPointsOfLife: characterPointsOfLife,
                    description: description,
                    weapon: weapon,
                    weaponDamages: weaponDamages,
-                   healing: healing)
+                   healing: healing,
+                   healingPoints: healingPoints)
         }
 }

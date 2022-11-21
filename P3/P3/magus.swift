@@ -14,12 +14,14 @@ import Foundation
         let description: String = "Son talent ? Soigner les membres de son équipe"
         let weapon: String = "Wand"
         let weaponDamages: Int = 5
+        let healingPoints: Int = 35
         let healing: Bool = true
             super.init(characterType: characterType,
                        characterPointsOfLife: characterPointsOfLife,
                        description: description,
                        weapon: weapon,
                        weaponDamages: weaponDamages,
-                       healing: healing)
+                       healing: healing,
+                       healingPoints: healingPoints)
         }
 }

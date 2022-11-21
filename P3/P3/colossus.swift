@@ -15,12 +15,14 @@ final class Colossus: Character {
         let weapon: String = "sword"
         let weaponDamages: Int = 10
         let healing: Bool = false
+        let healingPoints: Int = 0
         super.init(characterType: characterType,
                    characterPointsOfLife: characterPointsOfLife,
                    description: description,
                    weapon: weapon,
                    weaponDamages: weaponDamages,
-                   healing: healing)
+                   healing: healing,
+                   healingPoints: healingPoints)
     }
 }
 

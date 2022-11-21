@@ -15,12 +15,14 @@ final class Warrior: Character {
         let weapon: String = "Sword"
         let weaponDamages: Int = 20
         let healing: Bool = false
+        let healingPoints: Int = 0
             super.init(characterType: characterType,
                        characterPointsOfLife: characterPointsOfLife,
                    description: description,
                    weapon: weapon,
                    weaponDamages: weaponDamages,
-                   healing: healing)
+                   healing: healing,
+                       healingPoints: healingPoints)
     }
     }
 

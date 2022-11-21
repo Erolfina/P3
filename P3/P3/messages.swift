@@ -31,34 +31,34 @@ Let's meet our two opponents!
 """)
     }
     
-    static func gameReadyToStart (){
+    static func gameReadyToStart(firstPlayer: Players, secondPlayer: Players) {
         print ("""
 Everybody is set up!
-Our first opponenent : \(player1.playerName) with their 3 fighters :
+Our first opponenent : \(firstPlayer.playerName) with their 3 fighters :
 """)
-        for index in 0..<player1.playerCharactersName.count{
+        for index in 0..<firstPlayer.playerCharactersName.count{
             print ("""
-- \(player1.playerCharactersName[index]), \(player1.playerCharactersType[index])
+- \(firstPlayer.playerCharactersName[index]), \(firstPlayer.playerCharactersType[index])
 """)
         }
         print ("""
-With a total of \(player1.setupPlayerPointsOfLife()) points of life !
+With a total of \(firstPlayer.setupPlayerPointsOfLife()) points of life !
 
 VS
 
-Our second opponenent : \(player2.playerName) with their 3 fighters :
+Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
 """)
-        for index in 0..<player2.playerCharactersName.count{
+        for index in 0..<secondPlayer.playerCharactersName.count{
             print ("""
- - \(player2.playerCharactersName[index]), \(player2.playerCharactersType[index])
+ - \(secondPlayer.playerCharactersName[index]), \(secondPlayer.playerCharactersType[index])
  """)
         }
-        print ("With a total of \(player2.setupPlayerPointsOfLife()) points of life !")
+        print ("With a total of \(secondPlayer.setupPlayerPointsOfLife()) points of life !")
         
     }
     
     static func chooseFighter(player: Players) { //integrer fucntion de calcul de vue du character
-        print("\(player.playerName) choose your first fighter :")
+        print("\(player.playerName) choose your fighter :")
         
         for index in 0..<player.playerCharactersName.count{ //check if the fighter is alive
             if player.playerCharactersLife[index] > 0 {
@@ -73,10 +73,10 @@ Our second opponenent : \(player2.playerName) with their 3 fighters :
         print("Who do you want to fight ?")
         
         for index in 0..<player.playerCharactersName.count{
-            if player.playerCharactersLife[index] > 0 { //check if the target is alive
+            if player.playerCharactersLife[index] >= 0 { //check if the target is alive
             }
             print("""
-                     \(index+1). \(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
+                     \(index+1). \(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
         """)
         }
     }
@@ -93,9 +93,9 @@ Our second opponenent : \(player2.playerName) with their 3 fighters :
         print("Who do you want to heal ?")
         
         for index in 0..<player.playerCharactersName.count{
-            if player.playerCharactersLife[index] > 0 { //check if the target is alive
+            if player.playerCharactersLife[index] >= 0 { //check if the target is alive
                 print("""
-                           \(index+1)\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife [index]) points of life.
+                           \(index+1)\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
         """)
             }
         }
@@ -106,6 +106,21 @@ Our second opponenent : \(player2.playerName) with their 3 fighters :
         \(defensingCharacterName) has received \(attackingWeaponDamages) points of damages.
         \(defensingPlayerName) has \(defensingPlayerLife) points of life remaining.
         """)
+    }
+    
+    static func printSwitchHeal(characterName: String, healingPoints: Int, playerName: String, playerLife: Int) {
+        print("""
+        \(characterName) has received \(healingPoints) healing points .
+        \(playerName) has \(playerLife) points of life remaining.
+        """)
+    }
+    
+    static func playerIsDead() {
+        print ("Oh come on! This guy is dead already pick someone else!")
+    }
+    
+    static func commandInvalid() {
+        print ("This command is invalid. Please choose between the option proposed")
     }
 }
 

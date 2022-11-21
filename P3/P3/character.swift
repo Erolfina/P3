@@ -22,16 +22,17 @@ class Character {
     let weapon: String
     let weaponDamages: Int
     let healing: Bool
+    let healingPoints: Int
     
-    init (characterType: String, characterPointsOfLife: Int, description: String, weapon: String, weaponDamages: Int, healing: Bool) {
+    init (characterType: String, characterPointsOfLife: Int, description: String, weapon: String, weaponDamages: Int, healing: Bool, healingPoints: Int ) {
         self.characterType = characterType
         self.characterPointsOfLife = characterPointsOfLife
         self.description = description
         self.weapon = weapon
         self.weaponDamages = weaponDamages
         self.healing = healing
+        self.healingPoints = healingPoints
     }
-    
    
 }
 
