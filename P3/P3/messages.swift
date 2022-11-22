@@ -36,7 +36,7 @@ Let's meet our two opponents!
 Everybody is set up!
 Our first opponenent : \(firstPlayer.playerName) with their 3 fighters :
 """)
-        for index in 0..<firstPlayer.playerCharactersName.count{
+        for index in 0..<firstPlayer.playerCharactersName.count {
             print ("""
 - \(firstPlayer.playerCharactersName[index]), \(firstPlayer.playerCharactersType[index])
 """)
@@ -48,7 +48,7 @@ VS
 
 Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
 """)
-        for index in 0..<secondPlayer.playerCharactersName.count{
+        for index in 0..<secondPlayer.playerCharactersName.count {
             print ("""
  - \(secondPlayer.playerCharactersName[index]), \(secondPlayer.playerCharactersType[index])
  """)
@@ -60,7 +60,7 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
     static func chooseFighter(player: Players) { //integrer fucntion de calcul de vue du character
         print("\(player.playerName) choose your fighter :")
         
-        for index in 0..<player.playerCharactersName.count{ //check if the fighter is alive
+        for index in 0..<player.playerCharactersName.count { //check if the fighter is alive
             if player.playerCharactersLife[index] > 0 {
                 print("""
                 \(index+1).\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
@@ -72,7 +72,7 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
     static func chooseTargetToAttack(player: Players) { //integrer fucntion de calcul de vue du character
         print("Who do you want to fight ?")
         
-        for index in 0..<player.playerCharactersName.count{
+        for index in 0..<player.playerCharactersName.count {
             if player.playerCharactersLife[index] >= 0 { //check if the target is alive
             }
             print("""
@@ -92,7 +92,7 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
     static func chooseTargetToHeal(player: Players) { //integrer fucntion de calcul de vue du character
         print("Who do you want to heal ?")
         
-        for index in 0..<player.playerCharactersName.count{
+        for index in 0..<player.playerCharactersName.count {
             if player.playerCharactersLife[index] >= 0 { //check if the target is alive
                 print("""
                            \(index+1)\(player.playerCharactersName[index]), the \(player.playerCharactersType[index]) fighting with a \(player.playerCharactersWeapon[index]) (\(player.playerCharactersWeaponDamages[index]) damages point) and \(player.playerCharactersLife[index]) points of life.
@@ -122,5 +122,55 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
     static func commandInvalid() {
         print ("This command is invalid. Please choose between the option proposed")
     }
+    
+    static func gameOver() {
+        if player1.playerLife <= 0{
+            
+            print ("""
+                GAME OVER!
+                \(player2.playerName) won the game!
+                """)
+        } else if player2.playerLife <= 0{
+            print ("""
+                GAME OVER!
+                \(player1.playerName) won the game!
+                """)
+        }
+    }
+    
+    static func statistics(firstPlayer: Players, secondPlayer: Players, index: Int) {
+        print ("The game runs for \(Game.counterRound)")
+        Self.statisticsFighter(firstPlayer: firstPlayer, secondPlayer: firstPlayer, index: index)
+    }
+    
+    static func statisticsFighter(firstPlayer: Players, secondPlayer: Players, index: Int) {
+        for index in 0..<firstPlayer.playerCharactersName.count {
+            
+            print("""
+                    The fighter of \(firstPlayer.playerName) :
+                       \(firstPlayer.playerCharactersName[index]), the \(firstPlayer.playerCharactersType[index]) fighting with a \(firstPlayer.playerCharactersWeapon[index]) has \(firstPlayer.playerCharactersLife[index]) remaining points of life.
+                """)
+        }
+        
+        for index in 0..<firstPlayer.playerCharactersName.count {
+            print("""
+                            The fighter of \(secondPlayer.playerName) :
+                               \(secondPlayer.playerCharactersName[index]), the \(secondPlayer.playerCharactersType[index]) fighting with a \(secondPlayer.playerCharactersWeapon[index]) has \(secondPlayer.playerCharactersLife[index]) remaining points of life.
+                """)
+            
+        }
+    }
+    
+    static func statisticsHeal( firstPlayer: Players, secondPlayer: Players, index: Int) {
+        let firstPlayerHealingStatistics = Game.healingCounter*firstPlayer.playerCharactersWeaponDamages[index]
+        let secondPlayerHealingStatistics = Game.healingCounter*secondPlayer.playerCharactersWeaponDamages[index]
+        
+        for index in 0..<firstPlayer.playerCharactersName.count {
+            if firstPlayer.playerCharactersType[index] == .magus{
+                print("The \(firstPlayer.playerCharactersType[index]) give \(firstPlayerHealingStatistics) healing points ")
+            } else if secondPlayer.playerCharactersType[index] == .magus{
+                print("The \(secondPlayer.playerCharactersType[index]) give \(secondPlayerHealingStatistics) healing points ")
+            }
+        }
+    }
 }
-

@@ -10,6 +10,15 @@ import Foundation
 final class Game {
     
     // MARK: Privates Methods
+    static var counterRound = 0
+    static var healingCounter = 0
+    static var fighterCounter = 0
+   
+    
+  //  static var choiceIsEmpty: Bool = true
+    static var characterChoice: String = ""
+    
+   
     
     
     //Messages when you open the game and set up your characters
@@ -20,20 +29,30 @@ final class Game {
         player2.chooseNameOfPlayer(player: player2, compareWith: player1.playerName)
         Players.playerChooseTheirCharacters(player: player2, firstPlayer: player2, secondPlayer: player1)
         PrintMessages.gameReadyToStart(firstPlayer: player1, secondPlayer: player2)
+        PrintMessages.statisticsFighter(firstPlayer: player1, secondPlayer: player2, index: 0)
     }
     
- /*   //players give their names and choose their character and characters' name
-    private static func setUpPlayer(firstPlayer: Players, secondPlayer: Players) {
-        Players.chooseNameOfPlayer(player: firstPlayer, compareWith: Players.playerName)
-        Players.playerChooseTheirCharacters()
-    }*/
-    
-    static func startFight() {
-        while player1.playerLife >= 0 || player2.playerLife >= 0 {
+    static func runGame() {
+      
+        
+        while Players.checkIfPlayerIsDead(fistPlayer: player1, secondPlayer: player2) == false {
             self.fight(attackingPlayer: player1, defensingPlayer: player2)
             self.fight(attackingPlayer: player2, defensingPlayer: player1)
+            counterRound += 1
         }
+            PrintMessages.gameOver()
+       
     }
+    
+ /*static func getIndex()-> Int {
+      let indexChoice: Int = 0
+           
+           if characterChoice == readLine() {
+               guard let indexChoice = Int(characterChoice) else { return 0}
+           }
+
+      return indexChoice
+  }*/
     
     private static func fight(attackingPlayer: Players, defensingPlayer: Players) {
         PrintMessages.chooseFighter(player: attackingPlayer)
@@ -41,12 +60,14 @@ final class Game {
         
         while choiceIsEmpty == true {
             
-            if let characterChoice = readLine() {
+       //     if getIndex() != 0 {
+            
+           if let characterChoice = readLine() {
                 guard let indexCharacter = Int(characterChoice) else { return }
                 
                 if checkIfChraracterIsDead(player: attackingPlayer, index: indexCharacter-1) == true { //check if target is alive
                     PrintMessages.playerIsDead()
-                }else{
+                } else {
                     if Players.checkHealingPower(character: attackingPlayer.playerCharactersType[indexCharacter-1]) == false { //check if the character choice is a healer or not
                         switch Int(characterChoice) {
                         case 1,2,3:
@@ -57,12 +78,12 @@ final class Game {
                         self.attack(attackingPlayer: attackingPlayer, defensingPlayer: defensingPlayer, indexDamages: indexCharacter-1)
                         choiceIsEmpty = false
                         
-                    }else if Players.checkHealingPower(character: attackingPlayer.playerCharactersType[indexCharacter-1]) == true {
+                    } else if Players.checkHealingPower(character: attackingPlayer.playerCharactersType[indexCharacter-1]) == true {
                         PrintMessages.healingOrAttackingChoice() // if character is a healer, give them choice to heal or attack
                         if Players.healerChooseHealing() == true {
                             self.heal(player: attackingPlayer, indexHealing: indexCharacter-1)
                             
-                        }else{
+                        } else {
                             self.attack(attackingPlayer: attackingPlayer, defensingPlayer: defensingPlayer, indexDamages: indexCharacter-1)
                             choiceIsEmpty = false
                         }
@@ -84,7 +105,7 @@ final class Game {
                 
                 if checkIfChraracterIsDead(player: defensingPlayer, index: indexTarget-1) == true { //check if target is alive
                     PrintMessages.playerIsDead()
-                }else{
+                } else {
                     var defensingCharacterLife = defensingPlayer.playerCharactersLife[indexTarget-1]
                     let remainingLife = defensingPlayer.playerLife - attackingPlayer.playerCharactersWeaponDamages[indexDamages]
                     
@@ -100,7 +121,8 @@ final class Game {
                         
                         PrintMessages.printSwitchAttack(defensingCharacterName:
                                                             defensingPlayer.playerCharactersName[indexTarget-1],
-                                                        attackingWeaponDamages: attackingPlayer.playerCharactersWeaponDamages[indexDamages],
+                                                        attackingWeaponDamages:
+                                                            attackingPlayer.playerCharactersWeaponDamages[indexDamages],
                                                         defensingPlayerName:
                                                             defensingPlayer.playerName,
                                                         defensingPlayerLife:
@@ -126,7 +148,7 @@ final class Game {
                 
                 if checkIfChraracterIsDead(player: player, index: indexTarget) == true { //check if target is alive
                     PrintMessages.playerIsDead()
-                }else {
+                } else {
                     
                     var attackingCharacterLife = player.playerCharactersLife[indexTarget-1]
                     let remainingLife = player.playerLife + player.playerCharactersHealingPoint[indexHealing]
@@ -146,6 +168,7 @@ final class Game {
                                                       playerName: player.playerName,
                                                       playerLife: player.playerLife)
                         targetChoiceIsEmpty = false
+                        healingCounter += 1
                     default:  PrintMessages.commandInvalid()
                     }
                 }
