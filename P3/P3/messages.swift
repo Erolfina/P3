@@ -71,24 +71,22 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
         print("\(player.playerName) choose your fighter :")
         
         for index in 0..<player.charactersName.count { //check if the fighter is alive
-            let message1 = " \(index+1).\(player.charactersName[index]), the \(player.charactersType[index]) "
-            let message2 = "fighting with a \(player.charactersWeapon[index]) (\(player.charactersWeaponDamages[index])"
-            let message3 = "  damages point) and \(player.charactersLife[index]) points of life."
-            
-            if player.charactersLife[index] >= 0 {
-                print("\(message1)\(message2)\(message3)")
+            if player.charactersLife[index] > 0 {
+                var message = " \(index+1).\(player.charactersName[index]), the \(player.charactersType[index]) "
+                 message += "fighting with a \(player.charactersWeapon[index]) (\(player.charactersWeaponDamages[index])"
+                 message += "  damages point) and \(player.charactersLife[index]) points of life."
+                print(message)
             }
         }
     }
     
     static func chooseTarget(player: Players, index: Int) {
-        let message1 = " \(index+1). \(player.charactersName[index]), the \(player.charactersType[index]) "
-        let message2 = "fighting with a \(player.charactersWeapon[index]) (\(player.charactersWeaponDamages[index])"
-        let message3 = "damages point) and \(player.charactersLife[index]) points of life."
-        if player.charactersLife[index] >= 0 { //check if the target is alive
+        if player.charactersLife[index] > 0 { //check if the target is alive
+            var message = " \(index+1). \(player.charactersName[index]), the \(player.charactersType[index]) "
+            message += "fighting with a \(player.charactersWeapon[index]) (\(player.charactersWeaponDamages[index])"
+            message += "damages point) and \(player.charactersLife[index]) points of life."
+            print(message)
         }
-        print("\(message1)\(message2)\(message3) ")
-        
     }
     
     static func chooseTargetToAttack(player: Players) { //integrer fucntion de calcul de vue du character
@@ -181,7 +179,6 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
             Weapon: \(firstPlayer.charactersWeapon[index])
             Weapon damages given : \(firstPlayer.damagesGivenCounter[index])
             Healing point received : \(firstPlayer.healingCounter[index])
-            Healing point given :
             Point of life remaining : \(firstPlayer.charactersLife[index])
             
             """)
@@ -189,7 +186,7 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
             
         }
         
-        print("The fighter of \(secondPlayer.playerName)")
+        print("\(secondPlayer.playerName)'s fighters")
         
         for index in 0..<secondPlayer.charactersName.count {
             print("""
@@ -198,7 +195,6 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
             Weapon: \(secondPlayer.charactersWeapon[index])
             Weapon damages given : \(secondPlayer.damagesGivenCounter[index])
             Healing point received : \(secondPlayer.healingCounter[index])
-            Healing point given :
             Point of life remaining : \(secondPlayer.charactersLife[index])
             
             """)

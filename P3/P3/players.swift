@@ -106,7 +106,9 @@ final class Players {
             if let characterNamePrompt = readLine() {
                 if characterNamePrompt == "" {
                     print ("This hero needs a name!")
-                } else if Self.characterNameAvailaible(firstPlayer: firstPlayer, secondPlayer: secondPlayer, nameChosen: characterNamePrompt) == false{
+                } else if Self.characterNameAvailaible(firstPlayer: firstPlayer,
+                                                       secondPlayer: secondPlayer,
+                                                       nameChosen: characterNamePrompt) == false{
                 } else {
                     nameOfCharacter = characterNamePrompt
                     player.charactersName.append(nameOfCharacter)

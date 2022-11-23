@@ -61,6 +61,7 @@ final class Game {
                         PrintMessages.healingOrAttackingChoice() // if character is a healer, give them choice to heal or attack
                         if Players.healerChooseHealing() == true {
                             self.heal(player: attackingPlayer, indexHealing: indexCharacter-1)
+                            choiceIsEmpty = false
                             
                         } else {
                             self.attack(attackingPlayer: attackingPlayer,
