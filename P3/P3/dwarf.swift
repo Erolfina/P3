@@ -9,14 +9,14 @@ import Foundation
 
 final class Dwarf: Character{
     init(){
-        let characterType: String = "Dwarf"
+        let type: String = "Dwarf"
         let characterPointsOfLife: Int = 75
         let description: String = "Sa hache vous infligera beaucoup de dégâts, mais il n'a pas beaucoup de points de vie"
         let weapon: String = "Axe"
         let weaponDamages: Int = 30
         let healing: Bool = false
         let healingPoints: Int = 0
-            super.init(characterType: characterType,
+            super.init(type: type,
                    characterPointsOfLife: characterPointsOfLife,
                    description: description,
                    weapon: weapon,
