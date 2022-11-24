@@ -9,18 +9,20 @@ import Foundation
 
 final class Warrior: Character {
     init(){
-        let characterType: String = "Warrior"
+        let type: String = "Warrior"
         let characterPointsOfLife: Int = 100
         let description: String = "L'attaquant classique. Un bon guerrier !"
         let weapon: String = "Sword"
         let weaponDamages: Int = 20
         let healing: Bool = false
-            super.init(characterType: characterType,
+        let healingPoints: Int = 0
+            super.init(type: type,
                        characterPointsOfLife: characterPointsOfLife,
-                   description: description,
-                   weapon: weapon,
-                   weaponDamages: weaponDamages,
-                   healing: healing)
+                       description: description,
+                       weapon: weapon,
+                       weaponDamages: weaponDamages,
+                       healing: healing,
+                       healingPoints: healingPoints)
     }
     }
 

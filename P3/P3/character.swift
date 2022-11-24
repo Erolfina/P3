@@ -16,20 +16,23 @@ enum Category : String {
 
 class Character {
     
-    let characterType: String
-    let characterPointsOfLife: Int
+    let type: String
+    var characterPointsOfLife: Int
     let description: String
     let weapon: String
     let weaponDamages: Int
     let healing: Bool
+    let healingPoints: Int
     
-    init (characterType: String, characterPointsOfLife: Int, description: String, weapon: String, weaponDamages: Int, healing: Bool) {
-        self.characterType = characterType
+    init (type: String, characterPointsOfLife: Int, description: String, weapon: String, weaponDamages: Int, healing: Bool, healingPoints: Int ) {
+        self.type = type
         self.characterPointsOfLife = characterPointsOfLife
         self.description = description
         self.weapon = weapon
         self.weaponDamages = weaponDamages
         self.healing = healing
+        self.healingPoints = healingPoints
     }
+   
 }
 

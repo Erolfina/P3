@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9408933F2917C1B300935D23 /* messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9408933E2917C1B300935D23 /* messages.swift */; };
+		9452A24D292D96AE00B3E205 /* players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452A24C292D96AE00B3E205 /* players.swift */; };
 		94A2D1942914FDC10090B9CC /* character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2D1932914FDC10090B9CC /* character.swift */; };
 		94B8AE8029077B1A0090C903 /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE7F29077B1A0090C903 /* game.swift */; };
-		94B8AE82290780DC0090C903 /* player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE81290780DC0090C903 /* player.swift */; };
 		94B8AE86290786FB0090C903 /* dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE85290786FA0090C903 /* dwarf.swift */; };
 		94B8AE8829079A980090C903 /* warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE8729079A980090C903 /* warrior.swift */; };
 		94B8AE8A29079AA90090C903 /* colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B8AE8929079AA90090C903 /* colossus.swift */; };
@@ -32,9 +32,9 @@
 
 /* Begin PBXFileReference section */
 		9408933E2917C1B300935D23 /* messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messages.swift; sourceTree = "<group>"; };
+		9452A24C292D96AE00B3E205 /* players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = players.swift; sourceTree = "<group>"; };
 		94A2D1932914FDC10090B9CC /* character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = character.swift; sourceTree = "<group>"; };
 		94B8AE7F29077B1A0090C903 /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
-		94B8AE81290780DC0090C903 /* player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = player.swift; path = ../../../../../../Applications/player.swift; sourceTree = "<group>"; };
 		94B8AE85290786FA0090C903 /* dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dwarf.swift; sourceTree = "<group>"; };
 		94B8AE8729079A980090C903 /* warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = warrior.swift; sourceTree = "<group>"; };
 		94B8AE8929079AA90090C903 /* colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colossus.swift; sourceTree = "<group>"; };
@@ -73,9 +73,9 @@
 		94FB2BF629067BCE006518C3 /* P3 */ = {
 			isa = PBXGroup;
 			children = (
+				9452A24C292D96AE00B3E205 /* players.swift */,
 				94FB2BF729067BCE006518C3 /* main.swift */,
 				94B8AE7F29077B1A0090C903 /* game.swift */,
-				94B8AE81290780DC0090C903 /* player.swift */,
 				94A2D1932914FDC10090B9CC /* character.swift */,
 				94B8AE8929079AA90090C903 /* colossus.swift */,
 				94B8AE85290786FA0090C903 /* dwarf.swift */,
@@ -146,12 +146,12 @@
 			files = (
 				9408933F2917C1B300935D23 /* messages.swift in Sources */,
 				94FB2BF829067BCE006518C3 /* main.swift in Sources */,
-				94B8AE82290780DC0090C903 /* player.swift in Sources */,
 				94B8AE8829079A980090C903 /* warrior.swift in Sources */,
 				94A2D1942914FDC10090B9CC /* character.swift in Sources */,
 				94B8AE8C29079AB80090C903 /* magus.swift in Sources */,
 				94B8AE86290786FB0090C903 /* dwarf.swift in Sources */,
 				94B8AE8A29079AA90090C903 /* colossus.swift in Sources */,
+				9452A24D292D96AE00B3E205 /* players.swift in Sources */,
 				94B8AE8029077B1A0090C903 /* game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
