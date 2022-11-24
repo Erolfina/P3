@@ -139,22 +139,22 @@ Our second opponenent : \(secondPlayer.playerName) with their 3 fighters :
         print ("This command is invalid. Please choose between the option proposed")
     }
     
-    static func gameOver() {
-        if player1.playerLife <= 0{
+    static func gameOver(firstPlayer: Players, secondPlayer: Players) {
+        if firstPlayer.playerLife <= 0{
             
             print ("""
                 
                 GAME OVER!
                 
-                \(player2.playerName) won the game!
+                \(secondPlayer.playerName) won the game!
                 
                 """)
-        } else if player2.playerLife <= 0{
+        } else if secondPlayer.playerLife <= 0{
             print ("""
                 
                 GAME OVER!
                 
-                \(player1.playerName) won the game!
+                \(firstPlayer.playerName) won the game!
                 
                 
                 """)

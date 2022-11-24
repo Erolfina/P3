@@ -14,10 +14,11 @@ final class Game {
    
     
     static func openingGame() {
+       
         PrintMessages.openingGame()
-        player1.chooseNameOfPlayer(player: player1, compareWith: "")
+        Players.chooseNameOfPlayer(player: player1, compareWith: "")
         Players.playerChooseTheirCharacters(player: player1, firstPlayer: player1, secondPlayer: player2)
-        player2.chooseNameOfPlayer(player: player2, compareWith: player1.playerName)
+        Players.chooseNameOfPlayer(player: player2, compareWith: player1.playerName)
         Players.playerChooseTheirCharacters(player: player2, firstPlayer: player2, secondPlayer: player1)
         PrintMessages.gameReadyToStart(firstPlayer: player1, secondPlayer: player2)
     }
@@ -28,8 +29,8 @@ final class Game {
             self.fight(attackingPlayer: player2, defensingPlayer: player1)
             counterRound += 1
         }
-        PrintMessages.gameOver()
-        PrintMessages.statistics(firstPlayer: player1, secondPlayer: player2)
+        PrintMessages.gameOver(firstPlayer: player1, secondPlayer: player1)
+        PrintMessages.statistics(firstPlayer: player1, secondPlayer: player1)
     }
     
     

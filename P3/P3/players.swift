@@ -10,7 +10,7 @@ import Foundation
 final class Players {
     
     // MARK: Properties
-    var playerName: String = ""
+     var playerName: String = ""
     
      var charactersType: [Category] = []
      var charactersName: [String] = []
@@ -28,7 +28,7 @@ final class Players {
     
     // MARK: Privates Methods
     
-    func chooseNameOfPlayer(player: Players, compareWith name: String) {
+   static func chooseNameOfPlayer(player: Players, compareWith name: String) {
         print ("Hello stranger ! What's your name? ")
         var playerNameIsEmpty = true
         
@@ -41,7 +41,7 @@ final class Players {
                     if playerNamePrompt == name {
                         print ("Impostor! That's someone else name! Please give your real name!")
                     } else {
-                        self.playerName = playerNamePrompt
+                        player.playerName = playerNamePrompt
                         print ("Are you ready to fight? \(playerNamePrompt)")
                         playerNameIsEmpty = false
                     }
@@ -54,7 +54,7 @@ final class Players {
         var numberOfCharacter = 0
         while numberOfCharacter < 3 {
             PrintMessages.chooseYourCharacters()
-            if let characterChoice = readLine(){
+            if let characterChoice = readLine() {
                 switch Int(characterChoice) {
                 case 1:
                     player.charactersType.append(Category.warrior)

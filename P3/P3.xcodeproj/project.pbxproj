@@ -54,6 +54,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9451F73B29302DF900478CF7 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				94A2D1932914FDC10090B9CC /* character.swift */,
+				94B8AE8929079AA90090C903 /* colossus.swift */,
+				94B8AE85290786FA0090C903 /* dwarf.swift */,
+				94B8AE8B29079AB80090C903 /* magus.swift */,
+				94B8AE8729079A980090C903 /* warrior.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
 		94FB2BEB29067BCE006518C3 = {
 			isa = PBXGroup;
 			children = (
@@ -73,15 +85,11 @@
 		94FB2BF629067BCE006518C3 /* P3 */ = {
 			isa = PBXGroup;
 			children = (
+				9451F73B29302DF900478CF7 /* Character */,
 				9452A24C292D96AE00B3E205 /* players.swift */,
-				94FB2BF729067BCE006518C3 /* main.swift */,
-				94B8AE7F29077B1A0090C903 /* game.swift */,
-				94A2D1932914FDC10090B9CC /* character.swift */,
-				94B8AE8929079AA90090C903 /* colossus.swift */,
-				94B8AE85290786FA0090C903 /* dwarf.swift */,
-				94B8AE8B29079AB80090C903 /* magus.swift */,
-				94B8AE8729079A980090C903 /* warrior.swift */,
 				9408933E2917C1B300935D23 /* messages.swift */,
+				94B8AE7F29077B1A0090C903 /* game.swift */,
+				94FB2BF729067BCE006518C3 /* main.swift */,
 			);
 			path = P3;
 			sourceTree = "<group>";
@@ -114,7 +122,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					94FB2BF329067BCE006518C3 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -192,6 +200,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -252,6 +261,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -275,7 +285,9 @@
 		94FB2BFC29067BCE006518C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -284,7 +296,9 @@
 		94FB2BFD29067BCE006518C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

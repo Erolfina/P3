@@ -12,6 +12,8 @@ import Foundation
 var player1 = Players()
 var player2 = Players()
 
+
+
 //initialisation of characters
 var magus = Magus()
 var colossus = Colossus()
